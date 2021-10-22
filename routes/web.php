@@ -27,26 +27,26 @@ Route::get('/about', function () {
 
 Route::prefix('logado')->group(function(){
     Route::get('/home', function () {
-        return view('homeLogado');
+        return view('/logado/homeLogado');
     });
 
     Route::get('/cachorros', function () {
-        return view('cachorros');
+        return view('/logado/cachorros');
     });
 
     Route::get('/gatos', function () {
-        return view('gatos');
+        return view('/logado/gatos');
     });
 
     Route::get('/passarinhos', function () {
-        return view('passarinhos');
+        return view('/logado/passarinhos');
     });
 
     Route::get('/silvestres', function () {
-        return view('silvestres');
+        return view('/logado/silvestres');
     });
 
     Route::get('/peixes', function () {
-        return view('peixes');
+        return view('/logado/peixes');
     });
 });
