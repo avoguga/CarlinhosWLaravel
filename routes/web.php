@@ -14,5 +14,39 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+
+Route::get('/register', function () {
+    return view('register');
+});
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::prefix('logado')->group(function(){
+    Route::get('/home', function () {
+        return view('homeLogado');
+    });
+
+    Route::get('/cachorros', function () {
+        return view('cachorros');
+    });
+
+    Route::get('/gatos', function () {
+        return view('gatos');
+    });
+
+    Route::get('/passarinhos', function () {
+        return view('passarinhos');
+    });
+
+    Route::get('/silvestres', function () {
+        return view('silvestres');
+    });
+
+    Route::get('/peixes', function () {
+        return view('peixes');
+    });
 });
