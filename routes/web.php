@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CachorroController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,36 +18,9 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/register', function () {
-    return view('register');
-});
-
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::prefix('logado')->group(function(){
-    Route::get('/home', function () {
-        return view('/logado/homeLogado');
-    });
-
-    Route::get('/cachorros', function () {
-        return view('/logado/cachorros');
-    });
-
-    Route::get('/gatos', function () {
-        return view('/logado/gatos');
-    });
-
-    Route::get('/passarinhos', function () {
-        return view('/logado/passarinhos');
-    });
-
-    Route::get('/silvestres', function () {
-        return view('/logado/silvestres');
-    });
-
-    Route::get('/peixes', function () {
-        return view('/logado/peixes');
-    });
+Route::prefix('cachorros')->group(function () {
+    Route::get('/', [CachorroController::class, 'listar']);
+    Route::get('/cadastro', [CachorroController::class, 'cadastro']);
+    Route::get('/editar', [CachorroController::class, 'editar']);
+    Route::get('/visualizar', [CachorroController::class, 'visualizar']);
 });
