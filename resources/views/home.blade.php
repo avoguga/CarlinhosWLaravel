@@ -62,8 +62,6 @@
         <div id="content">
 
         </div>
-
-        <p>Ropapé com texto pika</p>
     </div>
 </body>
 </html>

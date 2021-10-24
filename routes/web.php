@@ -27,7 +27,7 @@ Route::get('/about', function () {
 
 Route::get('/contatos', function () {
     return view('contatos');
-});
+}); 
 
 Route::get('/chat', function () {
     return view('chat');
@@ -35,7 +35,9 @@ Route::get('/chat', function () {
 
 Route::get('/login', 'LoginController@login');
 
-Route::get('/register', 'RegisterController@register');
+Route::post('/logar', 'LoginController@logar')->name('logar');
+
+Route::get('/register', 'RegisterController@register')->name('register');
 
 Route::prefix('cachorros')->group(function () {
     Route::get('/', [CachorroController::class, 'listar']);
