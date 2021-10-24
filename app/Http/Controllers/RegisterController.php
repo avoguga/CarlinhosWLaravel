@@ -20,5 +20,7 @@ class RegisterController extends Controller
             'email' => 'required',
             'password' => 'required|integer'
         ]);
+
+        echo 'Ainda não tem cadastro >//<';
     }
 }
