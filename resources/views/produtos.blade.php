@@ -45,6 +45,11 @@
         grid-area: CT;
     }
 
+    #texto{
+        margin-left: 70px;
+        margin-top: 30px;
+    }
+
     </style>
 </head>
 <body>
@@ -60,7 +65,27 @@
             <h3><a class="header-links" href="{{url('/login')}}">Entrar</a></h3>
         </div>
         <div id="content">
-
+            <div id="texto">
+                <h1>
+                    Temos produtos disponiveis para os mais diversos tipos de animais!
+                </h1>
+                <h2>
+                    <a href="{{url('/cachorros')}}">Cães</a>
+                </h2>
+                <h2>
+                    <a href="{{url('/gatos')}}">Gatos</a>
+                </h2>
+                <h2>
+                    <a href="{{url('/passarinho')}}">Passaros</a>
+                </h2>
+                <h2>
+                    <a href="{{url('/peixes')}}">Peixes</a>
+                </h2>
+                <h2>
+                    <a href="{{url('/404')}}">Repteis</a>
+                </h2>
+                <h1>Escolha o seu e não fique por fora!</h1>
+            </div>
         </div>
     </div>
 </body>

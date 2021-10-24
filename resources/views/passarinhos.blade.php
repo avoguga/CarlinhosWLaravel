@@ -54,13 +54,13 @@
                 <h1>DogMania</h1>
             </div>
             <h3><a class="header-links" href="{{url('/')}}">Home</a></h3>
-            <h3><a class="header-links" href="{{url('/')}}">Produtos</a></h3>
+            <h3><a class="header-links" href="{{url('/produtos')}}">Produtos</a></h3>
             <h3><a class="header-links" href="{{url('/about')}}">Quem Somos</a></h3>
             <h3><a class="header-links" href="{{url('/contatos')}}">Contato</a></h3>
             <h3><a class="header-links" href="{{url('/login')}}">Entrar</a></h3>
         </div>
         <div id="content">
-
+            <img class="dog" src="{{ url('fotos/passaro.png') }}"/>
         </div>
     </div>
 </body>

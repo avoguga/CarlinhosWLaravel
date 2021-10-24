@@ -25,6 +25,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/produtos', function () {
+    return view('produtos');
+});
+
 Route::get('/contatos', function () {
     return view('contatos');
 }); 
@@ -33,11 +37,18 @@ Route::get('/chat', function () {
     return view('chat');
 });
 
+Route::get('/404', function () {
+    return view('404');
+});
+
 Route::get('/login', 'LoginController@login');
 
 Route::post('/logar', 'LoginController@logar')->name('logar');
 
 Route::get('/register', 'RegisterController@register')->name('register');
+
+Route::post('/cadastrar', 'RegisterController@cadastrar')->name('cadastrar');
+
 
 Route::prefix('cachorros')->group(function () {
     Route::get('/', [CachorroController::class, 'listar']);

@@ -56,6 +56,11 @@
             .login-block button:hover {
                 background: #ff7b81;
             }
+            .register{
+                width: 213px;
+                height: 36px;
+                margin: 70px auto;
+            }
         </style>
     <body>
         <div class="logo"></div>
@@ -67,6 +72,9 @@
                 <input type="password" name="password" placeholder="Senha" id="password" />
                 <button type="submit">Entrar</button>
             </form>
+        </div>
+        <div class="register">
+            <b>Não tem conta?</b> <a href="{{url('/register')}}">Registre-se!</a>
         </div>
     </body>
 </html>

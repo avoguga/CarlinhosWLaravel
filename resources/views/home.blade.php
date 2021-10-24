@@ -45,6 +45,13 @@
         grid-area: CT;
     }
 
+    #texto{
+        margin-top: 30px;
+        margin-left: 70px;
+    }
+    .dog{
+        margin-left: 400px;
+    }
     </style>
 </head>
 <body>
@@ -54,13 +61,18 @@
                 <h1>DogMania</h1>
             </div>
             <h3><a class="header-links" href="{{url('/')}}">Home</a></h3>
-            <h3><a class="header-links" href="{{url('/')}}">Produtos</a></h3>
+            <h3><a class="header-links" href="{{url('/produtos')}}">Produtos</a></h3>
             <h3><a class="header-links" href="{{url('/about')}}">Quem Somos</a></h3>
             <h3><a class="header-links" href="{{url('/contatos')}}">Contato</a></h3>
             <h3><a class="header-links" href="{{url('/login')}}">Entrar</a></h3>
         </div>
         <div id="content">
+            <div id="texto">
+                <h2>BEM VINDO AO SITE DA MAIOR VENDENDORA DE PRODUTOS DE PETSHOP DO BRASIL!</h2>
+                <h2>BEM VINDO A <h1>DogMania! - Mania de cão, mania de pet!</h1></h2>
+                <img class="dog" src="{{ url('fotos/dogmania.png') }}"/>
 
+            </div>
         </div>
     </div>
 </body>

@@ -1,67 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DogMania</title>
+        <style>
 
-    body{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+            .logo {
+                width: 213px;
+                height: 36px;
+                margin: 15px auto;
+            }
 
-    #layout{
-        display: grid;
-        grid-template-columns: auto;
-        grid-template-rows: 100px auto;
-        grid-template-areas:
-        'MH'
-        'CT';
+            .login-block {
+                width: 320px;
+                padding: 20px;
+                background: #fff;
+                border-radius: 5px;
+                border-top: 5px solid #ff656c;
+                margin: 0 auto;
+            }
 
-        height: 100vh;
-    }
-
-    #mainHeader{
-        grid-area: MH;
-        background-color: #ff656c;
-        display: flex;
-        justify-content: space-around;
-    }
-
-    #mainHeader h3{
-        margin-top: 40px;
-    }
-    
-
-    .header-links{
-        color: #000;
-        text-decoration: none;
-    }
-
-    #content{
-        grid-area: CT;
-    }
-
-    </style>
-</head>
-<body>
-    <div id="layout">
-        <div id="mainHeader">
-            <div>
-                <h1>DogMania</h1>
-            </div>
-            <h3><a class="header-links" href="{{url('/')}}">Home</a></h3>
-            <h3><a class="header-links" href="{{url('/')}}">Produtos</a></h3>
-            <h3><a class="header-links" href="{{url('/about')}}">Quem Somos</a></h3>
-            <h3><a class="header-links" href="{{url('/contatos')}}">Contato</a></h3>
-            <h3><a class="header-links" href="{{url('/login')}}">Entrar</a></h3>
+            .login-block h1 {
+                text-align: center;
+                color: #000;
+                font-size: 18px;
+                text-transform: uppercase;
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+            .login-block input {
+                width: 100%;
+                height: 42px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                margin-bottom: 20px;
+                font-size: 14px;
+                outline: none;
+                text-align: center;
+            }
+            .login-block button {
+                width: 80%;
+                height: 40px;
+                margin-left: 30px;
+                background: #ff656c;
+                border-radius: 5px;
+                border: 1px solid #e15960;
+                color: #fff;
+                font-weight: bold;
+                text-transform: uppercase;
+                font-size: 14px;
+                outline: none;
+                cursor: pointer;
+            }
+            .login-block button:hover {
+                background: #ff7b81;
+            }
+            .register{
+                width: 215px;
+                height: 36px;
+                margin: 70px auto;
+            }
+        </style>
+    <body>
+        <div class="logo"></div>
+        <div class="login-block">
+            <h1>Registro - DogMania</h1>
+            <form action="{{route('cadastrar')}}" method="post">
+                @csrf
+                <input type="text" name="name" placeholder="Nome" id="name" />
+                <input type="text" name="surname" placeholder="Sobrenome" id="surname" />
+                <input type="text" name="user" placeholder="Usuario" id="username" />
+                <input type="email" name="email" placeholder="Email" id="email" />
+                <input type="password" name="password" placeholder="Senha" id="password" />
+                <button type="submit">Cadastrar</button>
+                @if ($errors->any())
+                <h3>Erro no cadastro!</h3>
+                    @foreach ($errors->all() as $error)
+                        <p>{{$error}}</p>
+                    @endforeach
+                @endif
+            </form>
         </div>
-        <div id="content">
-
+        <div class="register">
+            <b>Já é cadastrado?</b> <a href="{{url('/login')}}">Boas compras!</a>
         </div>
-    </div>
-</body>
+    </body>
 </html>
