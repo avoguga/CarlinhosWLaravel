@@ -44,7 +44,14 @@
     #content{
         grid-area: CT;
     }
-
+    .texto{
+            margin-left: 70px;
+            display: flex;
+        }
+    .dog{
+        margin-left: 50px;
+        margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -53,17 +60,23 @@
             <div>
                 <h1>DogMania</h1>
             </div>
-            <h3><a class="header-links" href="{{route('/cachorros')}}">Home</a></h3>
-            <h3><a class="header-links" href="">Produtos</a></h3>
-            <h3><a class="header-links" href="">Quem Somos</a></h3>
-            <h3><a class="header-links" href="">Contato</a></h3>
-            <h3><a class="header-links" href="">Logar</a></h3>
+            <h3><a class="header-links" href="{{url('/')}}">Home</a></h3>
+            <h3><a class="header-links" href="{{url('/')}}">Produtos</a></h3>
+            <h3><a class="header-links" href="{{url('/about')}}">Quem Somos</a></h3>
+            <h3><a class="header-links" href="{{url('/contatos')}}">Contato</a></h3>
+            <h3><a class="header-links" href="{{url('/login')}}">Entrar</a></h3>
         </div>
         <div id="content">
+            <div class="texto">
+                <div>
+                    <h2>Email: dogmania@dogmania.com.br</h2>
+                    <h2>Telefone: (82) 99833-2324</h2>
+                    <h2>Chat: <a href="{{url('/chat')}}"> Clique aqui </a></h2>
+                </div>
+                <img class="dog" src="{{ url('fotos/dog1.png') }}"/>
 
+            </div>
         </div>
-
-        <p>Ropapé com texto pika</p>
     </div>
 </body>
 </html>
